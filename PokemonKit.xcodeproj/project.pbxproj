@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		533FBEEB22CFDA8100512E83 /* PokemonKitUniversal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 533FBEEC22CFDA8200512E83 /* Build configuration list for PBXAggregateTarget "PokemonKitUniversal" */;
+			buildPhases = (
+				533FBEEF22CFDACA00512E83 /* ShellScript */,
+				533FBEF122CFDB4F00512E83 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = PokemonKitUniversal;
+			productName = PokemonKitUniversal;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0C7D013C51B2F13CD38F655F /* Pods_PokemonKit_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A6765D938B601733B103A /* Pods_PokemonKit_tvOSTests.framework */; };
 		27D07C4461AAAC3EA49BD3FD /* Pods_PokemonKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F202A13FD1EBEE99653920 /* Pods_PokemonKit_tvOS.framework */; };
@@ -538,6 +553,11 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Yeung Yiu Hung";
 				TargetAttributes = {
+					533FBEEB22CFDA8100512E83 = {
+						CreatedOnToolsVersion = 11.0;
+						DevelopmentTeam = F54NBB76Q7;
+						ProvisioningStyle = Automatic;
+					};
 					74B038021D56714D00F48B92 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1100;
@@ -583,6 +603,7 @@
 				74B0383C1D56788200F48B92 /* PokemonKit tvOSTests */,
 				74B0384F1D5678AE00F48B92 /* PokemonKit OSX */,
 				74B038581D5678AE00F48B92 /* PokemonKit OSXTests */,
+				533FBEEB22CFDA8100512E83 /* PokemonKitUniversal */,
 			);
 		};
 /* End PBXProject section */
@@ -705,6 +726,40 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		533FBEEF22CFDACA00512E83 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n\n";
+		};
+		533FBEF122CFDB4F00512E83 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/YudizFramework.framework/ios-framework-build.sh\" YudizFramework\n";
 		};
 		7C560D9A89F1BFEE67802057 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -874,6 +929,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		533FBEED22CFDA8200512E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		533FBEEE22CFDA8200512E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		74B038151D56714D00F48B92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1008,6 +1081,7 @@
 				);
 				INFOPLIST_FILE = PokemonKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkcl.PokemonKit;
 				PRODUCT_NAME = PokemonKit;
@@ -1033,6 +1107,7 @@
 				);
 				INFOPLIST_FILE = PokemonKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkcl.PokemonKit;
 				PRODUCT_NAME = PokemonKit;
@@ -1278,6 +1353,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		533FBEEC22CFDA8200512E83 /* Build configuration list for PBXAggregateTarget "PokemonKitUniversal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				533FBEED22CFDA8200512E83 /* Debug */,
+				533FBEEE22CFDA8200512E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		74B037FD1D56714D00F48B92 /* Build configuration list for PBXProject "PokemonKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
