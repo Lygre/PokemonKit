@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -25,6 +25,11 @@
 		0C7D013C51B2F13CD38F655F /* Pods_PokemonKit_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A6765D938B601733B103A /* Pods_PokemonKit_tvOSTests.framework */; };
 		27D07C4461AAAC3EA49BD3FD /* Pods_PokemonKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F202A13FD1EBEE99653920 /* Pods_PokemonKit_tvOS.framework */; };
 		291C7F3F281D68132815F717 /* Pods_PokemonKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB25FEC9649A591DFC99B87E /* Pods_PokemonKit_iOS.framework */; };
+		5304DB9E22CFF8060030442E /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5304DB9D22CFF8060030442E /* PromiseKit */; };
+		5304DBA022CFF8730030442E /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5304DB9F22CFF8730030442E /* AlamofireObjectMapper.framework */; };
+		5304DBA122CFF8730030442E /* AlamofireObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5304DB9F22CFF8730030442E /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5304DBA422CFF8CD0030442E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5304DBA322CFF8CD0030442E /* Alamofire */; };
+		5304DBA722CFF8E60030442E /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5304DBA622CFF8E60030442E /* ObjectMapper */; };
 		5443BFA1FEB4E8C6FC09F9F4 /* Pods_PokemonKit_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5D5DF60916A603D80D87CB /* Pods_PokemonKit_OSX.framework */; };
 		6334DCB91ABBE0C8F996FB60 /* Pods_PokemonKit_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575C1976CC14E8E2F58BF960 /* Pods_PokemonKit_iOSTests.framework */; };
 		69BDE6E28AEF71D574A86885 /* Pods_PokemonKit_OSXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776E91DD0F4C1BC85874C9E6 /* Pods_PokemonKit_OSXTests.framework */; };
@@ -78,6 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5304DBA122CFF8730030442E /* AlamofireObjectMapper.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,7 @@
 		0A9A60F5CCEC753368DDC74A /* Pods-PokemonKit tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonKit tvOS.debug.xcconfig"; path = "Target Support Files/Pods-PokemonKit tvOS/Pods-PokemonKit tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		217A6765D938B601733B103A /* Pods_PokemonKit_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonKit_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2911CCC1EB2CD449602AD491 /* Pods-PokemonKit OSXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonKit OSXTests.debug.xcconfig"; path = "Target Support Files/Pods-PokemonKit OSXTests/Pods-PokemonKit OSXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5304DB9F22CFF8730030442E /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		575C1976CC14E8E2F58BF960 /* Pods_PokemonKit_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonKit_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CFD95A5820955BE1DC221D /* Pods-PokemonKit watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonKit watchOS.debug.xcconfig"; path = "Target Support Files/Pods-PokemonKit watchOS/Pods-PokemonKit watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5AC27B62A6F8E370AC255B79 /* Pods-PokemonKit watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonKit watchOS.release.xcconfig"; path = "Target Support Files/Pods-PokemonKit watchOS/Pods-PokemonKit watchOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +173,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				291C7F3F281D68132815F717 /* Pods_PokemonKit_iOS.framework in Frameworks */,
+				5304DBA722CFF8E60030442E /* ObjectMapper in Frameworks */,
+				5304DBA422CFF8CD0030442E /* Alamofire in Frameworks */,
+				5304DBA022CFF8730030442E /* AlamofireObjectMapper.framework in Frameworks */,
+				5304DB9E22CFF8060030442E /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +336,7 @@
 		74B0388A1D56794300F48B92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5304DB9F22CFF8730030442E /* AlamofireObjectMapper.framework */,
 				74B038A91D5683BB00F48B92 /* Alamofire.framework */,
 				74B038AA1D5683BB00F48B92 /* AlamofireObjectMapper.framework */,
 				74B038AB1D5683BB00F48B92 /* ObjectMapper.framework */,
@@ -422,6 +434,11 @@
 			dependencies = (
 			);
 			name = "PokemonKit iOS";
+			packageProductDependencies = (
+				5304DB9D22CFF8060030442E /* PromiseKit */,
+				5304DBA322CFF8CD0030442E /* Alamofire */,
+				5304DBA622CFF8E60030442E /* ObjectMapper */,
+			);
 			productName = PokemonKit;
 			productReference = 74B038031D56714D00F48B92 /* PokemonKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -592,6 +609,11 @@
 				Base,
 			);
 			mainGroup = 74B037F91D56714D00F48B92;
+			packageReferences = (
+				5304DB9C22CFF8060030442E /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				5304DBA222CFF8CD0030442E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5304DBA522CFF8E60030442E /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+			);
 			productRefGroup = 74B038041D56714D00F48B92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1055,7 +1077,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1082,7 +1105,11 @@
 				INFOPLIST_FILE = PokemonKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkcl.PokemonKit;
 				PRODUCT_NAME = PokemonKit;
 				SKIP_INSTALL = YES;
@@ -1108,7 +1135,11 @@
 				INFOPLIST_FILE = PokemonKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkcl.PokemonKit;
 				PRODUCT_NAME = PokemonKit;
 				SKIP_INSTALL = YES;
@@ -1121,7 +1152,11 @@
 			baseConfigurationReference = BF4CE736C158852094BA4AB0 /* Pods-PokemonKit iOSTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PokemonKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkcl.PokemonKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1133,7 +1168,11 @@
 			baseConfigurationReference = C73BD26A38E2813B19D1E263 /* Pods-PokemonKit iOSTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PokemonKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkcl.PokemonKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1156,7 +1195,11 @@
 				);
 				INFOPLIST_FILE = "PokemonKit watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-watchOS";
 				PRODUCT_NAME = PokemonKit;
 				SDKROOT = watchos;
@@ -1182,7 +1225,11 @@
 				);
 				INFOPLIST_FILE = "PokemonKit watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-watchOS";
 				PRODUCT_NAME = PokemonKit;
 				SDKROOT = watchos;
@@ -1207,7 +1254,11 @@
 				);
 				INFOPLIST_FILE = "PokemonKit tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-tvOS";
 				PRODUCT_NAME = PokemonKit;
 				SDKROOT = appletvos;
@@ -1232,7 +1283,11 @@
 				);
 				INFOPLIST_FILE = "PokemonKit tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-tvOS";
 				PRODUCT_NAME = PokemonKit;
 				SDKROOT = appletvos;
@@ -1247,7 +1302,11 @@
 			baseConfigurationReference = B987E6C40D3881CC1C5F7144 /* Pods-PokemonKit tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "PokemonKit tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1260,7 +1319,11 @@
 			baseConfigurationReference = B46EA1F8B8DFF38895291BDE /* Pods-PokemonKit tvOSTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "PokemonKit tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1285,7 +1348,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "PokemonKit OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-OSX";
 				PRODUCT_NAME = PokemonKit;
@@ -1311,7 +1378,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "PokemonKit OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-OSX";
 				PRODUCT_NAME = PokemonKit;
@@ -1327,7 +1398,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "PokemonKit OSXTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-OSXTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1342,7 +1417,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "PokemonKit OSXTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkcl.PokemonKit-OSXTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1435,6 +1514,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5304DB9C22CFF8060030442E /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:mxcl/PromiseKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5304DBA222CFF8CD0030442E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5304DBA522CFF8E60030442E /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5304DB9D22CFF8060030442E /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5304DB9C22CFF8060030442E /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+		5304DBA322CFF8CD0030442E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5304DBA222CFF8CD0030442E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5304DBA622CFF8E60030442E /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5304DBA522CFF8E60030442E /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74B037FA1D56714D00F48B92 /* Project object */;
 }
