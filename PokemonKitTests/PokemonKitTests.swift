@@ -27,7 +27,7 @@ class PokemonKitTests: XCTestCase {
         
         PokemonKit.fetchBerryList().then { response in
             asyncExpectation.fulfill()
-        }.onError { err in
+            }.catch { err in
             XCTFail("Should not failed with \(err)")
             asyncExpectation.fulfill();
         }
@@ -45,7 +45,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
             }
-            .onError { err in
+            .catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
         }
@@ -61,7 +61,7 @@ class PokemonKitTests: XCTestCase {
             .then{ response -> Void in
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -78,7 +78,7 @@ class PokemonKitTests: XCTestCase {
             .then{ response -> Void in
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -95,7 +95,7 @@ class PokemonKitTests: XCTestCase {
             .then{ response -> Void in
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -112,7 +112,7 @@ class PokemonKitTests: XCTestCase {
             .then{ response -> Void in
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -129,7 +129,7 @@ class PokemonKitTests: XCTestCase {
             .then{ response -> Void in
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -146,7 +146,7 @@ class PokemonKitTests: XCTestCase {
             .then{ response -> Void in
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -163,7 +163,7 @@ class PokemonKitTests: XCTestCase {
             .then{ response -> Void in
                 XCTAssertNotNil(response);
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -181,7 +181,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -199,7 +199,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -217,7 +217,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -235,7 +235,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -253,7 +253,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -271,7 +271,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -289,7 +289,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -307,7 +307,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -325,7 +325,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -343,7 +343,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -361,7 +361,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -379,7 +379,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -397,7 +397,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -415,7 +415,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -433,7 +433,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -451,7 +451,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -469,7 +469,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -487,7 +487,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -505,7 +505,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -523,7 +523,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -541,7 +541,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -559,7 +559,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -577,7 +577,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -595,7 +595,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -613,7 +613,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -631,7 +631,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
@@ -649,7 +649,7 @@ class PokemonKitTests: XCTestCase {
                 XCTAssertNotNil(response);
                 
                 asyncExpectation.fulfill();
-            }.onError { err in
+            }.catch { err in
                 XCTFail("Should not failed with \(err)")
                 asyncExpectation.fulfill();
                 
